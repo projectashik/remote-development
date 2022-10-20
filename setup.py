@@ -23,7 +23,7 @@ commands = [
     'php composer-setup.php',
     'php -r "unlink(\'composer-setup.php\');"',
     'sudo mv composer.phar /usr/local/bin/composer',
-    'echo \'export PATH="~/.config/composer/vendor/bin:$PATH"\' >> ~/.bashrc'
+    'echo \'export PATH="~/.config/composer/vendor/bin:$PATH"\' >> ~/.bashrc',
      # Docker Setup
     'curl -fsSL https://get.docker.com  | sh',
     # Github Cli

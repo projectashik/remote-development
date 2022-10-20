@@ -15,10 +15,7 @@ commands = [
     "curl -fsSL https://code-server.dev/install.sh | sh",
     "sudo systemctl enable --now code-server@$USER",
     "sudo systemctl start code-server@$USER",
-    "rm  ~/.config/code-server/config.yaml",
-    "touch ~/.config/code-server/config.yaml",
-    codeServerCommand,
-    "sudo systemctl restart code-server@$USER",
+
     # setup nginx reverse proxy
     "sudo apt install nginx -y",
     "sudo ufw allow 'Nginx Full'",
@@ -27,8 +24,13 @@ commands = [
     "sudo ln -s /etc/nginx/sites-available/code-server.conf /etc/nginx/sites-enabled/code-server.conf",
     # "sudo rm /etc/nginx/sites-enabled/default",
     "sudo nginx -t",
+    "sudo rm /etc/nginx/sites-enabled/default",
     "sudo systemctl restart nginx",
     # nginxCommand,
+    "rm  ~/.config/code-server/config.yaml",
+    "touch ~/.config/code-server/config.yaml",
+    codeServerCommand,
+    "sudo systemctl restart code-server@$USER",
 ]
 
 for cmd in commands:
